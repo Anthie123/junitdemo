@@ -1,0 +1,24 @@
+# Logs
+**/logs
+*.log
+
+# Runtime data
+**/pids
+*.pid
+*.seed
+
+#Maven
+**/target
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+*.uml
+.idea/
+
+# Eclipse
+.classpath
+.settings/
+.project
+bin/
