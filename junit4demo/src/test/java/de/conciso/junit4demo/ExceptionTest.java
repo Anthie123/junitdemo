@@ -33,6 +33,6 @@ public class ExceptionTest {
         catcher.expect(RuntimeException.class);
         catcher.expectMessage("MyMessage");
 
-        throw new RuntimeException();
+        throw new RuntimeException("MyMessage");
     }
 }

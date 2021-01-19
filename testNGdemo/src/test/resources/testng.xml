@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestSuite" verbose="1" parallel="instances" thread-count="5">
+  <parameter name="first" value="first parameter"/>
+  <test name="Demo"   >
+    <packages>
+      <package name="de.conciso.testngdemo" />
+    </packages>
+    <classes>
+      <class name="de.conciso.testngdemo.TestFactory"></class>
+    </classes>
+  </test>
+</suite>
