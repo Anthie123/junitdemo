@@ -1,8 +1,14 @@
 package de.conciso.junit5demo;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 @DisplayName("My Injection Test")
+@ExtendWith(MockitoExtension.class)
 public class InjectionTest {
 
     public InjectionTest(TestInfo info) {
@@ -42,5 +48,11 @@ public class InjectionTest {
         System.out.println("Info: " + info.toString());
         System.out.println("Repetition: " + repeatInfo.toString());
         reporter.publishEntry("Info", Integer.toString(repeatInfo.getTotalRepetitions()));
+    }
+    
+    @DisplayName("Mit Mockito Parameter Resolver")
+    @Test
+    void testWithMock(@Mock Object test) {
+    	assertNotNull(test);
     }
 }

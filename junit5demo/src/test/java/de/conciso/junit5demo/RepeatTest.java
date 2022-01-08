@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RepeatTest {
 
-    @RepeatedTest(value = 5, name = "{currentRepetition} von {totalRepetitions}")
+    @RepeatedTest(value = 5, name = "{displayName}: {currentRepetition} von {totalRepetitions}")
     public void testRepeatedRandomTest() {
         Double value = new Random().nextDouble();
 

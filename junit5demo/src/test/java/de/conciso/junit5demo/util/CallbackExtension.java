@@ -1,8 +1,13 @@
 package de.conciso.junit5demo.util;
 
-import org.junit.jupiter.api.extension.*;
-
-import java.util.stream.Stream;
+import org.junit.jupiter.api.extension.AfterAllCallback;
+import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
+import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
+import org.junit.jupiter.api.extension.Extension;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 public class CallbackExtension implements Extension,
         BeforeAllCallback, BeforeEachCallback,
@@ -11,6 +16,7 @@ public class CallbackExtension implements Extension,
         //ExecutionCondition,
         //TestInstanceFactory,
         //TestInstancePostProcessor,
+        //TestInstancePreDestroyCallback
         //ParameterResolver,
         //TestExecutionExceptionHandler,
         //TestTemplateInvocationContextProvider

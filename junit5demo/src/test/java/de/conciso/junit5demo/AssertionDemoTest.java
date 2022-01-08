@@ -14,7 +14,8 @@ public class AssertionDemoTest {
         // Allgemeine Möglichkeiten
         assertTrue(true);
         assertTrue(() -> true);
-
+        assertTrue(() -> true, "Lambda gibt nicht true zurück");
+        
         assertEquals(1, 1);
         assertFalse(false);
         assertNotEquals(1, 2);
@@ -37,7 +38,9 @@ public class AssertionDemoTest {
 
         assertLinesMatch(Arrays.asList("Test\\d", ">> 2 >>", "\\w+\\d+"),
                 Arrays.asList("Test1", "Test2", "Test3", "Test4"));
-
+        
+        assertInstanceOf(Boolean.class, Boolean.FALSE);
+        
         assertTimeout(Duration.ofMillis(10), () -> Thread.sleep(1));
 
         assertTimeoutPreemptively(Duration.ofMillis(10), () -> Thread.sleep(1));

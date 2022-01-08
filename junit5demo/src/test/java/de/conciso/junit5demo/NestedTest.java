@@ -2,11 +2,15 @@ package de.conciso.junit5demo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.IndicativeSentencesGeneration;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Auch bei verschachtelten Testfällen")
 public class NestedTest {
@@ -49,6 +53,23 @@ public class NestedTest {
         public void testObjectIsNotNull() {
             assertNotNull(cut_);
         }
+    }
+
+    @Nested
+    @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+    class Display_Generator_Test {
+    	@Test
+    	void changes_method_name_presentation() {
+    		assertTrue(true);
+    	}
+    }
+    @Nested
+    @IndicativeSentencesGeneration(separator = " -> ", generator =  DisplayNameGenerator.ReplaceUnderscores.class)
+    class Display_Generator_Test_With_Sentence {
+    	@Test
+    	void changes_method_name_presentation() {
+    		assertTrue(true);
+    	}
     }
 
 

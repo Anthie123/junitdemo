@@ -3,6 +3,8 @@ package de.conciso.junit5demo;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import de.conciso.junit5demo.util.FastTest;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TagTest {
@@ -35,4 +37,10 @@ public class TagTest {
     public void etest() {
         assertTrue(true);
     }
+    
+    @FastTest
+    public void ftest() {
+        assertTrue(true);
+    }
+
 }

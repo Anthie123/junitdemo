@@ -29,4 +29,33 @@ public class ConditionalTest {
     public void testOnJre11() {
         assertTrue(false);
     }
+    @EnabledOnJre(JRE.JAVA_17)
+    @Test
+    public void testOnJre17() {
+        assertTrue(true);
+    }
+    
+    @Test
+    @EnabledIfSystemProperty(named = "CI", matches = "true")
+    void onlyOnCiServer() {
+        assertTrue(true);
+    }
+    
+    @Test
+    @DisabledIfSystemProperty(named = "CI", matches = "true")
+    void notOnCiServer() {
+        assertTrue(true);
+    }
+    
+    @Test
+    @EnabledIf("de.conciso.junit5demo.MyCondition#myConditionMethod")
+    void runOnlyWithValidCondition() {
+    	assertTrue(true);
+    }
+}
+
+class MyCondition {
+	static boolean myConditionMethod() {
+		return true;
+	}
 }
