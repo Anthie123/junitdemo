@@ -1,10 +1,15 @@
 package de.conciso.junit5demo;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
-import org.junit.jupiter.api.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class FixtureDemoTest {
 
     public FixtureDemoTest() {
@@ -46,8 +51,14 @@ public class FixtureDemoTest {
         System.out.println("Dies ist der disabled Test");
     }
 
+    @Disabled("Dieser Test is deaktiviert")
     @Test
-    public void test_Method_4() {
+    public void testMethod4() {
+        System.out.println("Dies ist der disabled Test");
+    }
+
+    @Test
+    public void test_Method_5() {
         System.out.println("Dies ist der vierte Test");
     }
 
